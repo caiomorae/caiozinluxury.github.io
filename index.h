@@ -2,88 +2,74 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caio Luxury – Perfumes Exclusivos</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Caio Luxury – Perfumes de Luxo</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
     <h1>Caio Luxury</h1>
     <nav>
-      <a href="#lancamentos">Lançamentos</a>
-      <a href="#mais-vendidos">Mais Vendidos</a>
-      <a href="#favoritos">Favoritos</a>
-      <a class="whatsapp-btn" href="https://wa.me/5599999999999" target="_blank">🛒 Carrinho</a>
+      <ul>
+        <li><a href="#lancamentos">Lançamentos</a></li>
+        <li><a href="#favoritos">Favoritos</a></li>
+        <li><a href="#patrocinadores">Patrocinadores / Outras Marcas</a></li>
+        <li><a href="#nosso">Nosso Próprio</a></li>
+      </ul>
     </nav>
   </header>
 
-  <section class="hero">
-    <h2>Bem-vindo ao universo do luxo</h2>
-    <p>Perfumes que definem poder, estilo e exclusividade.</p>
-  </section>
-
   <section id="lancamentos">
     <h2>Lançamentos</h2>
-    <div class="product-grid">
-      <div class="product">
-        <img src="https://i.imgur.com/dF9VpEo.jpg" alt="Racing Time" />
-        <h3>Racing Time – F1 x Caio Luxury</h3>
-        <p class="tag-lancamento">Lançamento 🔥</p>
-      </div>
-      <div class="product">
-        <img src="https://i.imgur.com/F0qLr4j.jpg" alt="212 VIP" />
+    <div class="grid">
+      <div class="produto" onclick="abrirProduto('212 VIP', 'images/212vip.jpg', 'R$ 599')">
+        <img src="images/212vip.jpg" alt="212 VIP"/>
         <h3>212 VIP</h3>
-      </div>
-    </div>
-  </section>
-
-  <section id="mais-vendidos">
-    <h2>Mais Vendidos</h2>
-    <div class="product-grid">
-      <div class="product">
-        <img src="https://i.imgur.com/z5pVYQc.jpg" alt="Dior Sauvage" />
-        <h3>Dior Sauvage</h3>
-      </div>
-      <div class="product">
-        <img src="https://i.imgur.com/vnG0VXN.jpg" alt="Bleu de Chanel" />
-        <h3>Bleu de Chanel</h3>
-      </div>
-      <div class="product">
-        <img src="https://i.imgur.com/1YbGj1d.jpg" alt="Gucci Guilty" />
-        <h3>Gucci Guilty</h3>
-      </div>
-      <div class="product">
-        <img src="https://i.imgur.com/EAX0HJc.jpg" alt="Boss Bottled" />
-        <h3>Boss Bottled</h3>
+        <button>Comprar</button>
       </div>
     </div>
   </section>
 
   <section id="favoritos">
-    <h2>Favoritos do Público</h2>
-    <div class="product-grid">
-      <div class="product">
-        <img src="https://i.imgur.com/7tXU3vA.jpg" alt="Louis Vuitton L’Immensité" />
-        <h3>L’Immensité – Louis Vuitton</h3>
+    <h2>Favoritos</h2>
+    <div class="grid">
+      <div class="produto" onclick="abrirProduto('Ralph Lauren', 'images/ralph.jpg', 'R$ 499')">
+        <img src="images/ralph.jpg" alt="Ralph Lauren"/>
+        <h3>Ralph Lauren</h3>
+        <button>Comprar</button>
       </div>
-      <div class="product">
-        <img src="https://i.imgur.com/Z5X0Kkz.jpg" alt="Ralph Lauren Polo Blue" />
-        <h3>Polo Blue – Ralph Lauren</h3>
+      <div class="produto" onclick="abrirProduto('Dior Sauvage', 'images/dior.jpg', 'R$ 659')">
+        <img src="images/dior.jpg" alt="Dior Sauvage"/>
+        <h3>Dior Sauvage</h3>
+        <button>Comprar</button>
       </div>
-      <div class="product">
-        <img src="https://i.imgur.com/Jjk0Dp6.jpg" alt="Red Ocean" />
-        <h3>Red Ocean</h3>
+      <div class="produto" onclick="abrirProduto('Gucci Guilty', 'images/gucci.jpg', 'R$ 529')">
+        <img src="images/gucci.jpg" alt="Gucci Guilty"/>
+        <h3>Gucci Guilty</h3>
+        <button>Comprar</button>
       </div>
-      <div class="product">
-        <img src="https://i.imgur.com/qUGmd5U.jpg" alt="Green Ocean" />
-        <h3>Green Ocean</h3>
+      <div class="produto" onclick="abrirProduto('Chanel Bleu', 'images/chanel.jpg', 'R$ 589')">
+        <img src="images/chanel.jpg" alt="Chanel Bleu"/>
+        <h3>Chanel Bleu</h3>
+        <button>Comprar</button>
       </div>
     </div>
   </section>
 
+  <section id="patrocinadores">
+    <h2>Patrocinadores / Outras Marcas</h2>
+    <div class="grid" id="patrocinadores-grid"></div>
+  </section>
+
+  <section id="nosso">
+    <h2>Nosso Próprio</h2>
+    <div class="grid" id="nosso-grid"></div>
+  </section>
+
   <footer>
-    <p>Siga a <strong>@caio.luxury</strong> no Instagram • © 2025 Caio Luxury</p>
+    <p>Siga no Instagram: @caio.luxury</p>
+    <a href="https://wa.me/5521997480420" target="_blank" class="whatsapp-float">WhatsApp</a>
   </footer>
 </body>
 </html>
