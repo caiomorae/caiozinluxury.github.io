@@ -3,73 +3,200 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Caio Luxury – Perfumes de Luxo</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script src="script.js" defer></script>
+  <title>Caio Luxury</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #000;
+      color: white;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      background-color: #111;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      color: gold;
+      font-size: 3rem;
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1rem 0;
+    }
+    nav button {
+      background-color: transparent;
+      border: 2px solid gold;
+      color: gold;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    nav button:hover {
+      background-color: gold;
+      color: black;
+    }
+    .section {
+      display: none;
+      padding: 2rem;
+      text-align: center;
+    }
+    .section.active {
+      display: block;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .product {
+      background-color: #111;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .product h3 {
+      margin: 0.5rem 0;
+      color: cyan;
+    }
+    .product button {
+      background-color: #003366;
+      color: white;
+      border: none;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      cursor: pointer;
+    }
+    .product-details {
+      display: none;
+    }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      background-color: #25D366;
+      border-radius: 50%;
+      padding: 1rem;
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+      z-index: 1000;
+    }
+    .back-btn {
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: gold;
+      border: none;
+      cursor: pointer;
+      color: black;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #111;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Caio Luxury</h1>
-    <nav>
-      <ul>
-        <li><a href="#lancamentos">Lançamentos</a></li>
-        <li><a href="#favoritos">Favoritos</a></li>
-        <li><a href="#patrocinadores">Patrocinadores / Outras Marcas</a></li>
-        <li><a href="#nosso">Nosso Próprio</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section id="lancamentos">
-    <h2>Lançamentos</h2>
-    <div class="grid">
-      <div class="produto" onclick="abrirProduto('212 VIP', 'images/212vip.jpg', 'R$ 599')">
-        <img src="images/212vip.jpg" alt="212 VIP"/>
-        <h3>212 VIP</h3>
-        <button>Comprar</button>
-      </div>
-    </div>
+<header>
+  <h1>Caio Luxury</h1>
+  <nav>
+    <button onclick="showSection('produtos')">Nossos Produtos</button>
+    <button onclick="showSection('patrocinadores')">Patrocinadores</button>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="section active">
+    <h2>Perfumes Exclusivos para Quem Busca o Extraordinário</h2>
   </section>
 
-  <section id="favoritos">
-    <h2>Favoritos</h2>
+  <section id="produtos" class="section">
+    <h2>Nossos Produtos</h2>
     <div class="grid">
-      <div class="produto" onclick="abrirProduto('Ralph Lauren', 'images/ralph.jpg', 'R$ 499')">
-        <img src="images/ralph.jpg" alt="Ralph Lauren"/>
-        <h3>Ralph Lauren</h3>
-        <button>Comprar</button>
+      <div class="product">
+        <img src="https://i.imgur.com/XRUO2IO.jpeg" alt="Ralph Lauren">
+        <h3>Ralph Lauren Polo</h3>
+        <button onclick="openProduct('https://wa.me/5521997480420')">Comprar Agora</button>
       </div>
-      <div class="produto" onclick="abrirProduto('Dior Sauvage', 'images/dior.jpg', 'R$ 659')">
-        <img src="images/dior.jpg" alt="Dior Sauvage"/>
+      <div class="product">
+        <img src="https://i.imgur.com/wQf4jDH.jpeg" alt="Dior Sauvage">
         <h3>Dior Sauvage</h3>
-        <button>Comprar</button>
+        <button onclick="openProduct('https://wa.me/5521997480420')">Comprar Agora</button>
       </div>
-      <div class="produto" onclick="abrirProduto('Gucci Guilty', 'images/gucci.jpg', 'R$ 529')">
-        <img src="images/gucci.jpg" alt="Gucci Guilty"/>
-        <h3>Gucci Guilty</h3>
-        <button>Comprar</button>
+      <div class="product">
+        <img src="https://i.imgur.com/l4ROk5B.jpeg" alt="Gucci Pour Homme">
+        <h3>Gucci Pour Homme</h3>
+        <button onclick="openProduct('https://wa.me/5521997480420')">Comprar Agora</button>
       </div>
-      <div class="produto" onclick="abrirProduto('Chanel Bleu', 'images/chanel.jpg', 'R$ 589')">
-        <img src="images/chanel.jpg" alt="Chanel Bleu"/>
-        <h3>Chanel Bleu</h3>
-        <button>Comprar</button>
+      <div class="product">
+        <img src="https://i.imgur.com/ZDJH4L2.jpeg" alt="Louis Vuitton Imagination">
+        <h3>LV Imagination</h3>
+        <button onclick="openProduct('https://wa.me/5521997480420')">Comprar Agora</button>
       </div>
     </div>
+    <button class="back-btn" onclick="goBack()">Voltar</button>
   </section>
 
-  <section id="patrocinadores">
-    <h2>Patrocinadores / Outras Marcas</h2>
-    <div class="grid" id="patrocinadores-grid"></div>
+  <section id="patrocinadores" class="section">
+    <h2>Patrocinadores</h2>
+    <div class="grid">
+      <div class="product">
+        <img src="https://i.imgur.com/Kfw8gYQ.jpeg" alt="Boss Bottled">
+        <h3>BOSS Bottled</h3>
+        <button onclick="openProduct('https://wa.me/5521997480420')">Comprar Agora</button>
+      </div>
+      <div class="product">
+        <img src="https://i.imgur.com/W2qIkUd.jpeg" alt="212 VIP Men">
+        <h3>212 VIP Men</h3>
+        <button onclick="openProduct('https://wa.me/5521997480420')">Comprar Agora</button>
+      </div>
+      <div class="product">
+        <img src="https://i.imgur.com/PrdJQSi.jpeg" alt="Bleu de Chanel">
+        <h3>Bleu de Chanel</h3>
+        <button onclick="openProduct('https://wa.me/5521997480420')">Comprar Agora</button>
+      </div>
+      <div class="product">
+        <img src="https://i.imgur.com/XRUO2IO.jpeg" alt="Ralph Lauren Black">
+        <h3>Ralph Lauren Black</h3>
+        <button onclick="openProduct('https://wa.me/5521997480420')">Comprar Agora</button>
+      </div>
+    </div>
+    <button class="back-btn" onclick="goBack()">Voltar</button>
   </section>
+</main>
 
-  <section id="nosso">
-    <h2>Nosso Próprio</h2>
-    <div class="grid" id="nosso-grid"></div>
-  </section>
+<a class="whatsapp-btn" href="https://wa.me/5521997480420" target="_blank">💬</a>
 
-  <footer>
-    <p>Siga no Instagram: @caio.luxury</p>
-    <a href="https://wa.me/5521997480420" target="_blank" class="whatsapp-float">WhatsApp</a>
-  </footer>
+<footer>
+  <p>Siga no Instagram: @CaioLuxury | © 2025</p>
+</footer>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+  function goBack() {
+    showSection('home');
+  }
+  function openProduct(link) {
+    window.open(link, '_blank');
+  }
+</script>
+
 </body>
 </html>
